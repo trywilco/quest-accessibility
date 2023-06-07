@@ -1,0 +1,25 @@
+id: implementing_improvements
+learningObjectives:
+  - Implement accessibility improvements based on audit suggestions.
+hints:
+  - Some common areas for improvement include color contrast, keyboard
+    navigation, and semantic HTML.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: With the audit results in hand, it's time to roll up our sleeves and start
+              making improvements.
+          - text: Choose one area of the frontend that needs accessibility enhancements.
+              Implement the necessary changes based on best practices and the
+              WCAG guidelines. When you're done, open a PR for us to review.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

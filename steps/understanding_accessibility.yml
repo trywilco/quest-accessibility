@@ -1,0 +1,29 @@
+id: understanding_accessibility
+learningObjectives:
+  - Understand the importance of web accessibility and WCAG.
+hints:
+  - Check out resources like w3.org, a11yproject.com, and MDN Web Docs for
+    information on web accessibility.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Hey, it's Lucca here. Ness just asked me to make sure our app, Anythink,
+              is accessible to everyone. We want to ensure that our app provides
+              a seamless experience to all users, including those with
+              disabilities.
+          - text: To figure out we will use on of chrome dev tools, a tool called (lighthouse)[https://developer.chrome.com/docs/lighthouse/]. It's a tool
+              that audits the accessibility, performance, and other aspects of
+              our app.
+          - text: Let's try it out on our anythink frontend app. Open the dev tools and click on the lighthouse
+              tab, choose Accessability and run the audit, let me know once the report is ready.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step
