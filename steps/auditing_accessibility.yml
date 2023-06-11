@@ -4,22 +4,42 @@ learningObjectives:
 hints:
   - For a Lighthouse audit, you can use Chrome DevTools or install the
     Lighthouse CLI.
-  - To use axe, you can install the axe browser extension or use axe-core in
-    your project's test suite.
 startFlow:
   do:
     - actionId: bot_message
       params:
-        person: lucca
+        person: head-of-rd
         messages:
           - text: Now that you've audited the website's accessability, let's look at
               the results.
           - text: It looks like there are some issues with the constrant of one element, can you tell me the CSS selector of the element?
-    - actionId: ready_message
-      params:
-        person: lucca
 trigger:
-  type: user_ready_response
+  type: user_message
+  params:
+    person: head-of-rd
   flowNode:
-    do:
-      - actionId: finish_step
+    if:
+      conditions:
+        - conditionId: text_contains_strings
+          params:
+            text: "${userMessageText}"
+            strings:
+              - button.nav-link
+              - button.nav-link.active
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: head-of-rd
+              messages:
+                - text: Correct, you found it.
+                  delay: 1300
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: head-of-rd
+              messages:
+                - text: It doesn't seem like correct CSS selector, try again.
+                  delay: 2500

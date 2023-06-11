@@ -1,18 +1,18 @@
-id: implementing_improvements
+id: adding_alt_attribute
 learningObjectives:
   - Implement accessibility improvements based on audit suggestions.
 hints:
-  - Some common areas for improvement include color contrast, keyboard
-    navigation, and semantic HTML.
+  - Find the alt attribute in the image element and add the word `banner` to it.
 startFlow:
   do:
     - actionId: bot_message
       params:
         person: head-of-rd
         messages:
-          - text: So you found the problematic element on the page, we should make it more easy to read.
-          - text: "Let's fix it by changing the color contrast to a more accessible one, we will use the hex color #77c4ff"
-          - text: :instruction[So, open a PR changing the 'Global feed' text color and I'll review it.]
+          - text: Now let's fix another accessilibity issue.
+          - text: As you can see in the lighthouse report we are missing an `alt` attribute in the logo.
+          - text: The alt attribute is important for screen readers to read the content of the image.
+          - text: :instruction[So, open a PR that adds the alt attribute to the banner with the description `anythink logo`.]
 
 trigger:
   type: github_pr_lifecycle_status
@@ -60,4 +60,4 @@ githubActions:
   frontend:
     capabilities:
       - jest-puppeteer
-    testFile: "contrast.test.js"
+    testFile: "alt.test.js"

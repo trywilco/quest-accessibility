@@ -20,7 +20,7 @@ steps:
   - understanding_accessibility
   - auditing_accessibility
   - implementing_improvements
-  - reassessing_accessibility
+  - adding_alt_attribute
 type: tutorial
 duration: 2
 repository: https://github.com/trywilco/Anythink-Market-Public
