@@ -1,8 +1,8 @@
 id: adding_alt_attribute
 learningObjectives:
-  - Implement accessibility improvements based on audit suggestions.
+  - Add screen reading information.
 hints:
-  - Find the alt attribute in the image element and add the word `banner` to it.
+  - Try to find the right image element and add the alt attribute with a `anythink logo` to it.
 startFlow:
   do:
     - actionId: bot_message
@@ -10,7 +10,7 @@ startFlow:
         person: head-of-rd
         messages:
           - text: Now let's fix another accessilibity issue.
-          - text: As you can see in the lighthouse report we are missing an `alt` attribute in the logo.
+          - text: As you can see in the Lighthouse report we are missing an `alt` attribute in the logo.
           - text: The alt attribute is important for screen readers to read the content of the image.
           - text: :instruction[So, open a PR that adds the alt attribute to the banner with the description `anythink logo`.]
 

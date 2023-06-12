@@ -1,5 +1,5 @@
 id: accessibility
-title: Enhancing Accessibility in the Frontend
+title: Accessibility Matters
 subtitle: "Improve user experience: Make Anythink accessible to all"
 description: In this quest, you'll learn how to enhance accessibility within
   Anythink's frontend, ensuring every user has a seamless experience. You'll
@@ -8,7 +8,7 @@ description: In this quest, you'll learn how to enhance accessibility within
   improve your website's accessibility.
 summary: Great job! In this quest, you learnt the importance of web
   accessibility, best practices for accessible UI/UX design, and implemented
-  accessibility improvements within Anythink's frontend. You now know how to use
+  accessibiliy improvements within Anythink's frontend. You now know how to use
   tools like Lighthouse and axe to audit and enhance your website's
   accessibility, ensuring a seamless experience for all users.
 level: intermediate
@@ -17,10 +17,10 @@ skills:
   - debugging
   - performance
 steps:
-  - understanding_accessibility
+  - intro
   - auditing_accessibility
-  - implementing_improvements
+  - fixing_contrast
   - adding_alt_attribute
 type: tutorial
-duration: 2
+duration: 1
 repository: https://github.com/trywilco/Anythink-Market-Public

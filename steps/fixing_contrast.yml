@@ -1,9 +1,8 @@
-id: implementing_improvements
+id: fixing_contrast
 learningObjectives:
   - Implement accessibility improvements based on audit suggestions.
 hints:
-  - Some common areas for improvement include color contrast, keyboard
-    navigation, and semantic HTML.
+  - There should be a CSS class that start with a dot (.) on the Lighthouse report.
 startFlow:
   do:
     - actionId: bot_message
