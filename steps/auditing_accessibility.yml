@@ -2,8 +2,7 @@ id: auditing_accessibility
 learningObjectives:
   - Audit the website's accessibility using Lighthouse or axe.
 hints:
-  - For a Lighthouse audit, you can use Chrome DevTools or install the
-    Lighthouse CLI.
+  - There should be a CSS class that start with a dot (.) on the Lighthouse report.
 startFlow:
   do:
     - actionId: bot_message

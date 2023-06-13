@@ -2,7 +2,7 @@ id: fixing_contrast
 learningObjectives:
   - Implement accessibility improvements based on audit suggestions.
 hints:
-  - There should be a CSS class that start with a dot (.) on the Lighthouse report.
+  - Add a new css class with the color on the frontend/src/custom.scss file and make sure you use it on the global feed element
 startFlow:
   do:
     - actionId: bot_message
