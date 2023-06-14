@@ -20,7 +20,7 @@ describe("Check the global items feed button has the right color", () => {
     await browser.close();
   });
 
-  it("Global feed button color is #77c4ff", async () => {
+  it("Global feed button color is white", async () => {
     await page.goto("http://localhost:3001", {
       waitUntil: "load",
       timeout: 60000,
@@ -32,11 +32,12 @@ describe("Check the global items feed button has the right color", () => {
     });
     const globalItemsButton = await page.$("button.nav-link");
     const rgbColor = await globalItemsButton.evaluate((el) => {
+      el.classList.add("active");
       const style = getComputedStyle(el);
       return style.color;
     });
     const hexColor = rgbToHex(rgbColor);
 
-    await expect(hexColor).toBe("#77c4ff");
+    await expect(hexColor).toBe("#ffffff");
   }, 60000)
 });

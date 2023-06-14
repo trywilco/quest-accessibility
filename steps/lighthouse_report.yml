@@ -1,0 +1,44 @@
+id: lighthouse_report
+learningObjectives:
+  - Get to know the Lighthouse report
+hints:
+  - There should be a CSS class that start with a dot (.) on the Lighthouse report.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: head-of-rd
+        messages:
+          - text: Now that you've audited the website's accessability, let's look at
+              the results.
+          - text: It looks like there are some issues with the constrant of one element, can you tell me the CSS selector of the element?
+trigger:
+  type: user_message
+  params:
+    person: head-of-rd
+  flowNode:
+    if:
+      conditions:
+        - conditionId: text_contains_strings
+          params:
+            text: "${userMessageText}"
+            strings:
+              - button.nav-link
+              - button.nav-link.active
+      then:
+        do:
+          - actionId: bot_message
+            params:
+              person: head-of-rd
+              messages:
+                - text: Correct, you found it.
+                  delay: 1300
+          - actionId: finish_step
+      else:
+        do:
+          - actionId: bot_message
+            params:
+              person: head-of-rd
+              messages:
+                - text: It doesn't seem like correct CSS selector, try again.
+                  delay: 2500

@@ -1,17 +1,26 @@
 id: auditing_accessibility
 learningObjectives:
-  - Audit the website's accessibility using Lighthouse or axe.
+  - Audit the website's accessibility using Lighthouse.
 hints:
-  - There should be a CSS class that start with a dot (.) on the Lighthouse report.
+  - Check out the [Lighthouse](https://developer.chrome.com/docs/lighthouse/) tool inside the Chrome DevTools.
+  - Check out resources like w3.org, a11yproject.com, and MDN Web Docs for
+    information on web accessibility.
 startFlow:
   do:
     - actionId: bot_message
       params:
         person: head-of-rd
         messages:
-          - text: Now that you've audited the website's accessability, let's look at
-              the results.
-          - text: It looks like there are some issues with the constrant of one element, can you tell me the CSS selector of the element?
+          - text: Hey, it's Ness here. It's seems our app, Anythink,
+              is not accessible to everyone. We want to ensure that our app provides
+              a seamless experience to all users, including those with
+              disabilities.
+          - text: To figure out what issues we have, we will use a tool called [Lighthouse](https://developer.chrome.com/docs/lighthouse/) inside the Chrome DevTools. It's a tool
+              that audits the accessibility, performance, and other aspects of
+              our app.
+          - text: So let's try it out on our anythink frontend app.
+          - text: Open the dev tools and click on the lighthouse tab, choose Accessability and run the audit.
+          - text: Can you tell me let me what score you got?
 trigger:
   type: user_message
   params:
@@ -19,19 +28,18 @@ trigger:
   flowNode:
     if:
       conditions:
-        - conditionId: text_contains_strings
+        - conditionId: text_match_regex
           params:
             text: "${userMessageText}"
-            strings:
-              - button.nav-link
-              - button.nav-link.active
+            regex: ^(6[0-9]|7[0-9]|8[0-9]|90)$ # A number between 60-90
+            flags: i
       then:
         do:
           - actionId: bot_message
             params:
               person: head-of-rd
               messages:
-                - text: Correct, you found it.
+                - text: You got it right.
                   delay: 1300
           - actionId: finish_step
       else:
@@ -40,5 +48,5 @@ trigger:
             params:
               person: head-of-rd
               messages:
-                - text: It doesn't seem like correct CSS selector, try again.
+                - text: It doesn't seem like the correct score, try again.
                   delay: 2500

@@ -2,7 +2,7 @@ id: fixing_contrast
 learningObjectives:
   - Implement accessibility improvements based on audit suggestions.
 hints:
-  - Add a new css class with the color on the frontend/src/custom.scss file and make sure you use it on the global feed element
+  - Add the a new css class called `.feed-toggle .nav-link.active` with the color on the frontend/src/custom.scss file.
 startFlow:
   do:
     - actionId: bot_message
@@ -10,7 +10,7 @@ startFlow:
         person: head-of-rd
         messages:
           - text: So you found the problematic element on the page, we should make it more easy to read.
-          - text: "Let's fix it by changing the color contrast to a more accessible one, we will use the hex color #77c4ff"
+          - text: "Let's fix it by changing the color contrast to a more accessible one, we will use the white color"
           - text: :instruction[So, open a PR changing the 'Global feed' text color and I'll review it.]
 
 trigger:
